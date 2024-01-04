@@ -1,0 +1,114 @@
+
+:root {
+    --code-color: darkred;
+    --code-bg-color: #aaaaaa;
+    --code-font-size: 14px;
+    --code-line-height: 1.4;
+    --scroll-bar-color: #c5c5c5;
+    --scroll-bar-bg-color: #f6f6f6;
+}
+
+::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0.5);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--scroll-bar-bg-color);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--scroll-bar-color);
+        border-radius: 20px;
+        border: 3px solid var(--scroll-bar-bg-color);
+    }
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.rounded-card {
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+.rounded-corner {
+    border-radius: 15px !important;
+    overflow: hidden;
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+    border: 2px dashed black;
+    border-radius: 13px;
+    transition: 0.2s;
+}
+
+.choose-file-button {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.file-message {
+    font-size: small;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-name-list {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 80vh; 
+    display: inline-block;
+}

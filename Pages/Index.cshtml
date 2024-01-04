@@ -1,0 +1,266 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>   
+    
+
+
+    @if (!@Html.ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            @Html.ValidationSummary()
+        </div>
+    }
+
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @ViewData["ErrorMessage"]
+        </div>
+    }
+
+    <did class="row p-0 mt-4">
+
+        <div class="col-12 col-lg-4">
+
+
+            <div>
+
+
+                <div class="card-body" style="height:80vh;overflow:auto;">
+                    <form method="post" enctype="multipart/form-data" asp-page-handler="optimize">
+                        <div class="file-drop-area">
+                            <span class="choose-file-button">Choose files</span>
+                            <span class="file-message">or drag and drop files here</span>
+                                <input class="file-input" type="file" asp-for="ImageFiles" accept=".jpg, .jpeg, .png, .gif, .bmp" multiple>
+                        </div>
+
+                        <hr class="mt-4">
+
+
+                        <div class="accordion accordion-flush">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        Compress
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+
+                                        <div class="form-check mt-3">
+                                            <input class="form-check-input" type="checkbox" value="True" id="checkCompress" asp-for="checkCompress">
+                                            <label class="form-check-label" for="checkCompress">
+                                                Compress
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            <label for="ImageQuality" class="form-label">Image Quality</label>
+
+                                            <div class="d-flex justify-content-between">
+                                                <div class="col-10">
+                                                    <input type="range" asp-for="ImageQuality" class="form-range" id="ImageQuality">
+                                                </div>
+                                                <div class="col-2 ms-3">
+                                                    <div id="currentValue">50</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        Resize
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+
+                                        <div class="form-check mt-3">
+                                            <input class="form-check-input" type="checkbox" value="True" id="checkResize" asp-for="checkResize">
+                                            <label class="form-check-label" for="checkResize">
+                                                Resize
+                                            </label>
+                                        </div>
+
+                                        <div class="row">
+                                            <label class="form-label">Dimensions (Width x Height)</label>
+                                            <div class="col-6">
+                                                <div class="input-group mb-3">
+                                                    <span class="input-group-text">W</span>
+                                                    <input type="number" value="0" class="form-control" id="ImgWidth" asp-for="ImgWidth">
+                                                    <span class="input-group-text">px</span>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-6">
+                                                <div class="input-group mb-3">
+                                                    <span class="input-group-text">H</span>
+                                                    <input type="number" value="0" class="form-control" id="ImgHeight" asp-for="ImgHeight">
+                                                    <span class="input-group-text">px</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Convert
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+
+                                        <div class="form-check mt-3">
+                                            <input class="form-check-input" type="checkbox" value="True" id="checkConvert" asp-for="checkConvert">
+                                            <label class="form-check-label" for="checkConvert">
+                                                Convert
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="imageFormat">Select Image Format:</label>
+                                            <select class="form-select" id="imageFormat" asp-for="SelectedImageFormat">
+                                                <option value="00" selected>Select Format</option>
+                                                <option value="jpg">JPEG (JPG)</option>
+                                                <option value="png">PNG</option>
+                                                <option value="gif">GIF</option>
+                                                <option value="bmp">BMP</option>
+                                                <option value="tiff">TIFF</option>
+                                                <option value="ico">ICO (Icon)</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+
+                        
+
+
+                        <label for="FolderName" class="form-label mt-3">Folder name to be saved :</label>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupFile01">Uploads / </label>
+                            <input type="text" asp-for="FolderName" class="form-control" aria-describedby="folderHelpBlock">
+                        </div>
+                        
+                        <div id="folderHelpBlock" class="form-text">
+                            Files and folders with the same name will be replaced.
+                        </div>
+
+                        
+
+                        <div class="mt-4 text-end">
+                            <button class="btn btn-primary shadow-sm" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                
+                
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-lg-8">
+            <h1>Output Files</h1>
+           
+
+            <div>
+                <div class="card rounded-card shadow">
+                    <div class="card-body">
+                            <div class="card-header shadow-sm rounded-corner">
+                                <ol class="breadcrumb mt-1 mb-1">
+                                    <li class="breadcrumb-item"><i class="fa-solid fa-folder-open"></i></li>
+                                    @foreach (var d in @Model.dirListWithPath)
+                                    {
+                                        <li class="breadcrumb-item" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="@d.DirPath">
+                                            <a asp-page="/Index" asp-route-dir="@d.DirPath">@d.DirName</a>
+                                        </li>
+                                    }
+                                </ol>
+                            </div>
+
+
+                        <hr>
+                        
+                        <ul class="list-group list-group-flush" style="height:57vh;overflow:auto;">
+                            @if (Model.Directories != null && Model.Directories.Any())
+                            {
+                                @foreach (var directory in Model.Directories)
+                                {
+                                    var dirName = @System.IO.Path.GetFileName(directory);
+                                    var dirPath = @System.IO.Path.GetFullPath(directory);
+
+                                    <li class="clearfix list-group-item list-group-item-action text-primary">
+                                        <span class="float-start"><i class="fa-solid fa-folder me-3"></i></span>
+                                        <a asp-page="/Index" asp-route-dir="@dirPath"><span class="float-start">@dirName</span></a>
+                                        <a asp-page="/Index" asp-page-handler="DownloadZip" asp-route-dirPath="@dirPath" class="float-end text-success" title="Download Zip">
+                                            <i class="fa-solid fa-download"></i>
+                                        </a>
+                                    </li>
+                                }
+                            }
+
+                            @if (Model.Files != null && Model.Files.Any())
+                            {
+                                @foreach (var file in Model.Files)
+                                {
+
+                                    var fileExtension = System.IO.Path.GetExtension(file);
+                                    bool isImage = IndexModel.IsImageFile(fileExtension);
+
+                                    @if (isImage)
+                                    {
+                                        var fileName = System.IO.Path.GetFileName(file);
+                                        var fileFullPath = System.IO.Path.GetFullPath(file);
+                                        var wwwrootPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+                                        var relativePath = System.IO.Path.GetRelativePath(wwwrootPath, fileFullPath);
+                                        var fileInfo = IndexModel.GetImageInfo(fileFullPath);
+                                        var fileSize = IndexModel.FormatBytes(new FileInfo(file).Length);
+                                        var fileDate = System.IO.File.GetLastWriteTime(file);
+                                        <li class="list-group-item clearfix">
+                                            <img src="@relativePath" alt="" class="img-thumbnail float-start me-1" style="max-height: 24px;" />
+                                            <span class="float-start text-dark file-item file-name-list" draggable="true" data-file-value="@fileFullPath">@fileName</span>
+                                            <span class="float-end" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left"
+                                                  data-bs-title="Dimension : @fileInfo <br> Type : @fileExtension <br> Size : @fileSize <br> Date : @fileDate">
+                                                  <i class="fa-solid fa-circle-info"></i>
+                                            </span>
+                                            <span class="float-end me-3 text-success">
+                                                <a asp-page="/Index" asp-page-handler="DownloadFile" asp-route-filePath="@fileFullPath" class="float-end text-success" title="Download File">
+                                                    <i class="fa-solid fa-arrow-down-long"></i>
+                                                </a>
+                                            </span>
+                                        </li>
+                                    }
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+ 
+        </div>
+
+    </did>
+</div>
+
