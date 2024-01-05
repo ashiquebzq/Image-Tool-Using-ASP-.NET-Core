@@ -4,7 +4,7 @@ An offline hostable image tool using ASP.NET Core for basic image tasks. Keep yo
 
 
 ## Used Libraries : 
-https://github.com/dlemstra/Magick.NET
+- Magick.NET https://github.com/dlemstra/Magick.NET
 
 
 ## Screenshorts :
