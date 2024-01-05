@@ -34,11 +34,10 @@ C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\bin\Debug\net8.0\run
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\bin\Debug\net8.0\runtimes\win-x86\native\Magick.Native-Q16-x86.dll
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\ImageOptimizer.csproj.AssemblyReference.cache
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\ImageOptimizer.csproj.CopyComplete
-C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\bin\Debug\net8.0\package-lock.json
-C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\bin\Debug\net8.0\package.json
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\staticwebassets\msbuild.ImageTool.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\staticwebassets\msbuild.build.ImageTool.props
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ImageTool.props
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ImageTool.props
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\scopedcss\bundle\ImageTool.styles.css
 C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\scopedcss\projectbundle\ImageTool.bundle.scp.css
+C:\Users\ASHIQUE\source\repos\ImageOptimizer\ImageOptimizer\obj\Debug\net8.0\ImageOptimizer.sourcelink.json

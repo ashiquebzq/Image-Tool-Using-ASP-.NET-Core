@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageOptimizer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03d8343a89cc6343a7f9e69114f79c0a280dfc85")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageOptimizer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageOptimizer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
