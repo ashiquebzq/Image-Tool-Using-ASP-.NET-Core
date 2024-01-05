@@ -1,6 +1,6 @@
 # Image Tool using ASP .NET Core 
 
-An offline hostable image tool using ASP.NET Core for basic image tasks. Keep your personal and important files safe by avoiding uploads to online tools.
+An offline hostable image tool using ASP.NET Core for basic image tasks like compression,resize or convert. Keep your personal and important files safe by avoiding uploads to online tools.
 
 
 ## Used Libraries : 
